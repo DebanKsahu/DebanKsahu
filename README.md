@@ -1,6 +1,6 @@
-- 👋 Hi, I’m @DebanKsahu
-- 👀 I’m interested in Programming_AI/ML_Drawing
-- 🌱 I’m currently learning Python
+- 👋 Hi, I’m @Deban Kumar Sahu
+- 👀 I’m interested in Programming_AI/ML_CP
+- 🌱 I’m currently learning DeepLearning/Tensorflow
 - 💞️ I’m looking to collaborate on ...
 
 <!---
