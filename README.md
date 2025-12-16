@@ -5,7 +5,7 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=debanksahu" alt="debanksahu" /></a> </p>
 
-- 🌱 I’m currently learning **Jetpack Compose**
+- 🌱 I’m currently learning **Kotlin Multiplatform & Go**
 
 - 💬 Ask me about **Kotlin, Python, Compose**
 
