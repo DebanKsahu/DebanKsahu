@@ -1,13 +1,13 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=4B0082,008080&height=280&section=header&text=HI,%20I'M%20NAME&fontSize=70&fontColor=ffffff&animation=fadeIn" alt="Header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=4B0082,008080&height=280&section=header&text=HI,%20I'M%20Deban&fontSize=70&fontColor=ffffff&animation=fadeIn" alt="Header" width="100%"/>
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=24&pause=1000&color=008080&center=true&vCenter=true&width=500&lines=Backend+Systems+%26+API+Design;Large+Language+Model+Integration;Python+Performance+Optimization" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=24&pause=1000&color=008080&center=true&vCenter=true&width=500&lines=Crafting+Snappy+APIs+With+FastAPI;Building+Sleek+UIs+With+Jetpack+Compose;Writing+Clean+DB+Logic+With+ORM;Daily+Doses+Of+DSA+&+Codeforces+Caffeine" alt="Typing Animation" />
 </a>
 
 <p align="center">
-  📍 <b>Location</b> • 🗣️ <b>he/him</b>
+  📍 <b>Berhampur, Odisha</b> • 🗣️ <b>he/him</b>
 </p>
 
 </div>
