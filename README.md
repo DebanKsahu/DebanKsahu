@@ -62,11 +62,11 @@ I am a Computer Science student specializing in **Python**, **Kotlin**, **Backen
 
 ### 📂 Featured Projects
 
-#### 🤖 **[RAG-Document-Chat](PROJECT_URL)**
-An intelligent API capable of querying large PDF datasets using retrieval-augmented generation.
-> `Python` `LangChain` `OpenAI` `Pinecone`
+#### 🤖 **[CraftLet]([PROJECT_URL](https://github.com/DebanKsahu/CraftLet))**
+CraftLet is a Python-based CLI (Command-Line Interface) tool designed to streamline project template management and initialization. 
+> `Python` `Typer` `Rich` 
 >
-> ⚡ **Impact:** Reduced internal research retrieval time by **60%** via semantic search optimization.
+> ⚡ **Impact:** It enables developers to quickly scaffold new projects from GitHub-hosted templates with minimal configuration overhead.
 
 #### ⚡ **[Async-Task-Queue](PROJECT_URL)**
 A high-throughput microservice architecture for handling background image processing jobs.
