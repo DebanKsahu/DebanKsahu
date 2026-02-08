@@ -62,17 +62,17 @@ I am a Computer Science student specializing in **Python**, **Kotlin**, **Backen
 
 ### 📂 Featured Projects
 
-#### 🤖 **[CraftLet]([PROJECT_URL](https://github.com/DebanKsahu/CraftLet))**
+#### 🤖 **[CraftLet](https://github.com/DebanKsahu/CraftLet)**
 CraftLet is a Python-based CLI (Command-Line Interface) tool designed to streamline project template management and initialization. 
 > `Python` `Typer` `Rich` 
 >
 > ⚡ **Impact:** It enables developers to quickly scaffold new projects from GitHub-hosted templates with minimal configuration overhead.
 
-#### ⚡ **[Async-Task-Queue](PROJECT_URL)**
-A high-throughput microservice architecture for handling background image processing jobs.
-> `FastAPI` `Redis` `Celery` `Docker`
+#### ⚡ **[Studget](https://github.com/DebanKsahu/Studget)**
+Studget is a modern, AI-powered personal finance management platform designed for students. It enables users to securely track, analyze, and gain insights into their spending habits.
+> `FastAPI` `Redis` `LangGraph` `LangChain` `SQLAlchemy` `Qdrant`
 >
-> ⚡ **Impact:** Successfully benchmarked at **500+ concurrent requests** with <200ms latency.
+> ⚡ **Impact:** Allows users to interact with their financial data conversationally, generate detailed reports, and receive actionable insights, all while ensuring data privacy and security.
 
 #### 📈 **[Crypto-Tracker-CLI](PROJECT_URL)**
 A lightweight, resource-efficient terminal dashboard for tracking real-time asset prices.
