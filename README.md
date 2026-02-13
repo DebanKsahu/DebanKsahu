@@ -74,11 +74,10 @@ Studget is a modern, AI-powered personal finance management platform designed fo
 >
 > ⚡ **Impact:** Allows users to interact with their financial data conversationally, generate detailed reports, and receive actionable insights, all while ensuring data privacy and security.
 
-#### 📈 **[Crypto-Tracker-CLI](PROJECT_URL)**
-A lightweight, resource-efficient terminal dashboard for tracking real-time asset prices.
-> `Python` `Typer` `Rich` `CoinGecko API`
+#### 📈 **[OrgF](https://github.com/DebanKsahu/OrgF)**
+OrgF is an Android application that leverages AI Agents to intelligently organize files on your device.
+> `Kotlin` `Android` `Jetpack Compose` `MediaPipe` `MLKit`
 >
-> ⚡ **Impact:** Acquired **50+ stars** on GitHub and 200+ weekly downloads on PyPI.
 
 ---
 
