@@ -3,6 +3,9 @@ import requests
 
 TOKEN = os.getenv("GH_TOKEN")
 
+if not TOKEN:
+    raise Exception("GH_TOKEN is missing in environment variables")
+
 HEADERS = {
     "Authorization": f"Bearer {TOKEN}"
 }
@@ -35,29 +38,69 @@ query {
 """
 
 
+# ---------------- FETCH DATA ---------------- #
+
 def fetch_data():
     url = "https://api.github.com/graphql"
-    res = requests.post(url, json={"query": QUERY}, headers=HEADERS)
+
+    res = requests.post(
+        url,
+        json={"query": QUERY},
+        headers=HEADERS
+    )
 
     if res.status_code != 200:
-        raise Exception(f"GitHub API error: {res.text}")
+        raise Exception(f"GitHub API error {res.status_code}: {res.text}")
 
-    return res.json()["data"]["viewer"]
+    data = res.json()
 
+    if "errors" in data:
+        raise Exception(f"GraphQL error: {data['errors']}")
+
+    return data["data"]["viewer"]
+
+
+# ---------------- FORMAT PR ---------------- #
+
+def pr_line(pr):
+    if not pr:
+        return ""
+
+    repo = pr.get("repository", {}).get("name", "unknown")
+    state = pr.get("state", "UNKNOWN")
+
+    icon = "🟢" if state == "OPEN" else "🔵"
+    title = pr.get("title", "No title")
+    url = pr.get("url", "#")
+
+    return f"- {icon} **{title}** (`{repo}`) → {url}"
+
+
+# ---------------- FORMAT ISSUE ---------------- #
+
+def issue_line(issue):
+    if not issue:
+        return ""
+
+    repo = issue.get("repository", {}).get("name", "unknown")
+    state = issue.get("state", "UNKNOWN")
+
+    icon = "🟢" if state == "OPEN" else "🔴"
+    title = issue.get("title", "No title")
+    url = issue.get("url", "#")
+
+    return f"- {icon} **{title}** (`{repo}`) → {url}"
+
+
+# ---------------- BUILD MARKDOWN ---------------- #
 
 def build_markdown(data):
-    prs = data["pullRequests"]["nodes"]
-    issues = data["issues"]["nodes"]
+    prs = data.get("pullRequests", {}).get("nodes", []) or []
+    issues = data.get("issues", {}).get("nodes", []) or []
 
-    def pr_line(pr):
-        icon = "🟢" if pr["state"] == "OPEN" else "🔵"
-        repo = pr["repository"]["name"]
-        return f"- {icon} **{pr['title']}** (`{repo}`) → {pr['url']}"
-
-    def issue_line(issue):
-        icon = "🟢" if issue["state"] == "OPEN" else "🔴"
-        repo = issue["repository"]["name"]
-        return f"- {icon} **{issue['title']}** (`{repo}`) → {issue['url']}"
+    # filter None safely
+    prs = [p for p in prs if p]
+    issues = [i for i in issues if i]
 
     pr_section = "\n".join(pr_line(p) for p in prs) or "_No recent PRs_"
     issue_section = "\n".join(issue_line(i) for i in issues) or "_No recent issues_"
@@ -75,28 +118,38 @@ def build_markdown(data):
 """.strip()
 
 
+# ---------------- UPDATE README ---------------- #
+
 def update_readme(content):
+    start_marker = "<!--START_GH_ACTIVITY-->"
+    end_marker = "<!--END_GH_ACTIVITY-->"
+
     with open("README.md", "r", encoding="utf-8") as f:
-        old = f.read()
+        text = f.read()
 
-    start = "<!--START_GH_ACTIVITY-->"
-    end = "<!--END_GH_ACTIVITY-->"
+    start_idx = text.find(start_marker)
+    end_idx = text.find(end_marker)
 
-    if start not in old or end not in old:
-        raise Exception("Missing README markers")
+    if start_idx == -1 or end_idx == -1:
+        raise Exception("Missing GH activity markers")
 
-    before = old.split(start)[0]
-    after = old.split(end)[1]
+    start_idx += len(start_marker)
 
-    new_block = f"{start}\n{content}\n{end}"
+    # Preserve everything outside the block EXACTLY
+    before = text[:start_idx]
+    after = text[end_idx:]
 
-    updated = before + new_block + after
+    new_text = before + "\n\n" + content.strip() + "\n\n" + after
 
     with open("README.md", "w", encoding="utf-8") as f:
-        f.write(updated)
+        f.write(new_text)
 
+
+# ---------------- MAIN ---------------- #
 
 if __name__ == "__main__":
     data = fetch_data()
     markdown = build_markdown(data)
     update_readme(markdown)
+
+    print("✅ GitHub activity updated successfully")
