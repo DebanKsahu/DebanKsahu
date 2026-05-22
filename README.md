@@ -118,7 +118,26 @@ OrgF is an Android application that leverages AI Agents to intelligently organiz
 
 ## 🚀 Latest GitHub Activity
 
-Loading...
+### 🟣 Pull Requests (Latest 10)
+- 🔵 **Fix/inmemory storage race condition** (`req-lab`) → https://github.com/snj07/req-lab/pull/5
+- 🔵 **Bypass sh shell and execute command directly in PowerShell** (`req-lab`) → https://github.com/snj07/req-lab/pull/3
+- 🟢 **docs: update README with more detailed project setup instructions.** (`FLW-Mobile-App`) → https://github.com/PSMRI/FLW-Mobile-App/pull/460
+- 🔵 **SkimLit** (`ML-Nexus`) → https://github.com/UppuluriKalyani/ML-Nexus/pull/271
+- 🔵 **Made changes to README file** (`Skimlit`) → https://github.com/DebanKsahu/Skimlit/pull/4
+- 🔵 **Added web interface and readme file and requirement file** (`Skimlit`) → https://github.com/DebanKsahu/Skimlit/pull/3
+- 🔵 **Added Notbook,Results and dataset** (`Skimlit`) → https://github.com/DebanKsahu/Skimlit/pull/2
+- 🔵 **Added DL models with LFS** (`Skimlit`) → https://github.com/DebanKsahu/Skimlit/pull/1
+- 🔵 **Start markdown** (`series-communicate-using-markdown-DebanKsahu`) → https://github.com/Exp-Communicate-Using-Markdown-Cohort-1/series-communicate-using-markdown-DebanKsahu/pull/3
+
+---
+
+### 🐞 Issues (Latest 10)
+- 🟢 **Pyrefly reports `missing-import` for workspace package exposed via `.pth` editable install** (`pyrefly`) → https://github.com/facebook/pyrefly/issues/3553
+- 🔴 **Race Condition in InMemoryRepository** (`req-lab`) → https://github.com/snj07/req-lab/issues/4
+- 🔴 **CopyCommandIntegrationTest Failed during testing** (`req-lab`) → https://github.com/snj07/req-lab/issues/2
+- 🟢 **[BUG] Running Linux scripts through deprecated WSL launcher in windows** (`onyx`) → https://github.com/onyx-dot-app/onyx/issues/10979
+- 🟢 **[BUG]  Unable to start the tool in Windows in developer-mode** (`tix-cli`) → https://github.com/TheDevOpsBlueprint/tix-cli/issues/95
+- 🔴 **Streamlit Web Application for Medical Research Text Extraction** (`ML-Nexus`) → https://github.com/UppuluriKalyani/ML-Nexus/issues/132
 
 <!--END_GH_ACTIVITY-->
 
