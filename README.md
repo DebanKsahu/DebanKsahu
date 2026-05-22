@@ -79,17 +79,42 @@ OrgF is an Android application that leverages AI Agents to intelligently organiz
 > `Kotlin` `Android` `Jetpack Compose` `MediaPipe` `MLKit`
 >
 
----
-
-### 📊 GitHub Activity
+## 📊 GitHub Analytics
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=DebanKsahu&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" />
+<img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=DebanKsahu&theme=tokyonight" />
+
+<img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=DebanKsahu&theme=tokyonight" />
+
+<img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=DebanKsahu&theme=tokyonight" />
+
+<img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=DebanKsahu&theme=tokyonight&utcOffset=5.5" />
 
 </div>
 
 ---
+
+## 📈 Contribution Graph
+
+<div align="center">
+
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=DebanKsahu&theme=tokyonight" />
+
+</div>
+
+---
+
+## 🔥 GitHub Streak
+
+<div align="center">
+
+<img src="https://streak-stats.demolab.com?user=DebanKsahu&theme=tokyonight&hide_border=true" />
+
+</div>
+```
+
+
 
 ### 🌱 Current Focus
 I am currently diving deep into **Vector Database Indexing** strategies and researching **Agentic Workflows** for autonomous backend tasks.
