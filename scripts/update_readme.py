@@ -1,34 +1,48 @@
+import os
 import requests
 
 USERNAME = "DebanKsahu"
 README_PATH = "README.md"
 
+TOKEN = os.getenv("GITHUB_TOKEN")
+
+headers = {
+    "Authorization": f"Bearer {TOKEN}",
+    "Accept": "application/vnd.github+json"
+} if TOKEN else {}
+
+
+def safe_get(url):
+    res = requests.get(url, headers=headers)
+    if res.status_code != 200:
+        raise Exception(f"GitHub API error: {res.status_code} -> {res.text}")
+    return res.json()
+
 
 def fetch_prs():
-    url = f"https://api.github.com/search/issues?q=author:{USERNAME}+type:pr+state:open"
-    data = requests.get(url).json()
-    return data.get("items", [])
+    url = f"https://api.github.com/search/issues?q=author:{USERNAME}+type:pr+state:open&sort=updated&order=desc"
+    return safe_get(url).get("items", [])
 
 
 def fetch_issues():
-    url = f"https://api.github.com/search/issues?q=author:{USERNAME}+type:issue+state:open"
-    data = requests.get(url).json()
-    return data.get("items", [])
+    url = f"https://api.github.com/search/issues?q=author:{USERNAME}+type:issue+state:open&sort=updated&order=desc"
+    return safe_get(url).get("items", [])
 
 
-def format_items(items, limit=10):
-    lines = []
-    for item in items[:limit]:
-        title = item["title"]
-        url = item["html_url"]
-        lines.append(f"- [{title}]({url})")
-    return "\n".join(lines) if lines else "_No active items_"
+def format_items(items):
+    if not items:
+        return "_No active items_"
+
+    return "\n".join(
+        f"- [{item['title']}]({item['html_url']})"
+        for item in items[:10]
+    )
 
 
-def replace_section(content, start, end, new_text):
-    start_idx = content.index(start) + len(start)
-    end_idx = content.index(end)
-    return content[:start_idx] + "\n" + new_text + "\n" + content[end_idx:]
+def replace_block(content, start, end, new_text):
+    before = content.split(start)[0]
+    after = content.split(end)[1]
+    return before + start + "\n" + new_text + "\n" + end + after
 
 
 with open(README_PATH, "r", encoding="utf-8") as f:
@@ -37,14 +51,14 @@ with open(README_PATH, "r", encoding="utf-8") as f:
 prs = format_items(fetch_prs())
 issues = format_items(fetch_issues())
 
-readme = replace_section(
+readme = replace_block(
     readme,
     "<!-- OPEN_PRS:start -->",
     "<!-- OPEN_PRS:end -->",
     prs
 )
 
-readme = replace_section(
+readme = replace_block(
     readme,
     "<!-- OPEN_ISSUES:start -->",
     "<!-- OPEN_ISSUES:end -->",
