@@ -98,23 +98,50 @@ def build_markdown(data):
     prs = data.get("pullRequests", {}).get("nodes", []) or []
     issues = data.get("issues", {}).get("nodes", []) or []
 
-    # filter None safely
     prs = [p for p in prs if p]
     issues = [i for i in issues if i]
 
-    pr_section = "\n".join(pr_line(p) for p in prs) or "_No recent PRs_"
-    issue_section = "\n".join(issue_line(i) for i in issues) or "_No recent issues_"
+    def format_pr(p):
+        repo = p.get("repository", {}).get("name", "unknown")
+        title = p.get("title", "No title")
+        url = p.get("url", "#")
+        state = p.get("state", "UNKNOWN")
+
+        icon = "🟢" if state == "OPEN" else "🔵"
+
+        return f"""
+**{icon} {title}**
+`{repo}`
+→ [view PR]({url})
+""".strip()
+
+    def format_issue(i):
+        repo = i.get("repository", {}).get("name", "unknown")
+        title = i.get("title", "No title")
+        url = i.get("url", "#")
+        state = i.get("state", "UNKNOWN")
+
+        icon = "🟢" if state == "OPEN" else "🔴"
+
+        return f"""
+**{icon} {title}**
+`{repo}`
+→ [view issue]({url})
+""".strip()
+
+    pr_block = "\n\n---\n\n".join(format_pr(p) for p in prs) or "_No recent PRs_"
+    issue_block = "\n\n---\n\n".join(format_issue(i) for i in issues) or "_No recent issues_"
 
     return f"""
-## 🚀 Latest GitHub Activity
+### 🚀 Pull Requests (Latest 10)
 
-### 🟣 Pull Requests (Latest 10)
-{pr_section}
+{pr_block}
 
 ---
 
 ### 🐞 Issues (Latest 10)
-{issue_section}
+
+{issue_block}
 """.strip()
 
 
