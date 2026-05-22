@@ -114,12 +114,12 @@ OrgF is an Android application that leverages AI Agents to intelligently organiz
 </div>
 ```
 
-## 🚀 Open Pull Requests
+## 🚀 Latest Pull Requests
 
 <!-- OPEN_PRS:start -->
 <!-- OPEN_PRS:end -->
 
-## 🐛 Open Issues
+## 🐛 Latest Issues
 
 <!-- OPEN_ISSUES:start -->
 <!-- OPEN_ISSUES:end -->
