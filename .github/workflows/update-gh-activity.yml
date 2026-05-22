@@ -1,9 +1,12 @@
-name: Update README (PRs & Issues)
+name: Update GitHub Activity
 
 on:
   schedule:
-    - cron: "0 */12 * * *"   # every 12 hours (safe for rate limits)
+    - cron: "0 */6 * * *"   # every 6 hours
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update:
@@ -21,15 +24,15 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Update README
+      - name: Run updater
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/update_readme.py
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: python scripts/update_github_activity.py
 
       - name: Commit changes
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add README.md
-          git commit -m "chore: update latest PRs & issues" || exit 0
+          git diff --cached --quiet || git commit -m "chore: update github activity"
           git push

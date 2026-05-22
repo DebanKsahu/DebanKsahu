@@ -112,17 +112,15 @@ OrgF is an Android application that leverages AI Agents to intelligently organiz
 <img src="https://streak-stats.demolab.com?user=DebanKsahu&theme=tokyonight&hide_border=true" />
 
 </div>
-```
 
-## 🚀 Latest Pull Requests
 
-<!-- OPEN_PRS:start -->
-<!-- OPEN_PRS:end -->
+<!--START_GH_ACTIVITY-->
 
-## 🐛 Latest Issues
+## 🚀 Latest GitHub Activity
 
-<!-- OPEN_ISSUES:start -->
-<!-- OPEN_ISSUES:end -->
+Loading...
+
+<!--END_GH_ACTIVITY-->
 
 
 
