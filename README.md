@@ -118,6 +118,12 @@ OrgF is an Android application that leverages AI Agents to intelligently organiz
 
 ### 🚀 Pull Requests (Latest 10)
 
+**🟢 fix: fixed the duplicate key issue**
+`ArchUnitPython`
+→ [view PR](https://github.com/LukasNiessen/ArchUnitPython/pull/6)
+
+---
+
 **🔵 Fix/inmemory storage race condition**
 `req-lab`
 → [view PR](https://github.com/snj07/req-lab/pull/5)
@@ -130,7 +136,7 @@ OrgF is an Android application that leverages AI Agents to intelligently organiz
 
 ---
 
-**🟢 docs: update README with more detailed project setup instructions.**
+**🔵 docs: update README with more detailed project setup instructions.**
 `FLW-Mobile-App`
 → [view PR](https://github.com/PSMRI/FLW-Mobile-App/pull/460)
 
@@ -173,6 +179,12 @@ OrgF is an Android application that leverages AI Agents to intelligently organiz
 ---
 
 ### 🐞 Issues (Latest 10)
+
+**🟢 [Refactor] Unused parameter in `clear_graph_cache()` function**
+`ArchUnitPython`
+→ [view issue](https://github.com/LukasNiessen/ArchUnitPython/issues/5)
+
+---
 
 **🟢 Pyrefly reports `missing-import` for workspace package exposed via `.pth` editable install**
 `pyrefly`
